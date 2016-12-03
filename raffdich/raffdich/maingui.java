@@ -72,7 +72,8 @@ public class maingui extends JFrame {
       
       raffen = new raffdich(dayOfWeek+4);
     }
-    lang = new loadLanguage(raffen.getLang());
+    if(raffen.getLang()==null)    lang = new loadLanguage("en");
+    else lang = new loadLanguage(raffen.getLang());
     setTitle(lang.getMainTitle());
     jLabel1.setBounds(16, 56, 110, 20);
     jLabel1.setText(raffen.getFach1());
